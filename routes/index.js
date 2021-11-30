@@ -21,8 +21,8 @@ router.get('/contacto', (req, res) => {
 
 // localhost:3000/libros
 router.get("/libros", async (req, res) => {
-  const book = await api.getBooks();
-  res.send(book);
+  const books = await api.getBooks();
+  res.render("pages/libros", { books });
 });
 
 router.get("/libro/:id", async (req, res) =>{
