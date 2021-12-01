@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agregar Libro</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include("../partials/nav.ejs") %>
+    <h1>Agregar libro</h1>
+
+    <form action="/agregar-libro" method="POST">
+        <label>
+            Titulo:
+            <input type="text" name="titulo">
+        </label><br>
+        <label>
+            Precio:
+            <input type="number" name="precio">
+        </label><br>
+        <label>
+            Portada:
+            <input type="text" name="portada" value="test">
+        </label><br>
+
+        <label for="autor">Autor</label>
+        <select id="autor">
+            <option value="1">King</option>
+            <option value="2">Radcliffe</option>
+            <option value="3">Rice</option>
+        </select><br>
+
+
+        <input type="submit" value="Agregar libro">
+
+    </form>
+
+  </body>
+</html>
