@@ -54,10 +54,16 @@ const searchByTitle = async (titulo) => {
     return results;
 }
 
+const addBook = (titulo, precio, portada, autorId) => {
+    //Acá vamos a devolver un libro
+    console.log("Llegó:", titulo, precio, portada, autorId);
+}
+
 //Exportamos las funciones
 module.exports = {
     getBooks,
     getBookById,
     searchByTitle,
-    getAuthors
+    getAuthors,
+    addBook
 }

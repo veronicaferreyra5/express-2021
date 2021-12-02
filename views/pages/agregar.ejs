@@ -23,10 +23,14 @@
         </label><br>
 
         <label for="autor">Autor</label>
-        <select id="autor">
-            <option value="1">King</option>
-            <option value="2">Radcliffe</option>
-            <option value="3">Rice</option>
+
+
+        <select id="autor" name="autor">
+          <% authors.forEach(autor => { %>
+            <option value="<%= autor.idAutor %>">
+              <%= autor.nombreCompleto %>
+            </option>
+            <% }) %>
         </select><br>
 
 
