@@ -32,11 +32,11 @@ router.get("/agregar", async (req, res) => {
 });
 
 //Post agregar libro, proceso
-router.post("/agregar-libro", (req, res) => {
+router.post("/agregar-libro", async (req, res) => {
   //Levantar los datos del formulario de agregar
-  console.log(req.body);
+ 
   const { titulo, precio, portada, autor } = req.body;
-  api.addBook(titulo, precio, portada, autor);
+  await api.addBook(titulo, precio, portada, autor);
 
   res.send("Vas bien!");
 });
