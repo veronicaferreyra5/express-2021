@@ -63,4 +63,18 @@ router.get("/libro/:id", async (req, res) =>{
   res.render("pages/libro", { book });
 });
 
+//GET Agregar autor a la page
+router.get('/agregar-autor', (req, res) => {
+  res.render('pages/agregar-autor');
+});
+
+//Puedo compartir rutas y usar metodos distintos
+//GET y POST
+router.post("/agregar-autor", async (req, res) =>{
+  console.log("El usuario tipeó:", req.body.nombreCompleto);
+  await api.addAuthor(req.body.nombreCompleto);
+
+  res.send("Estas en la versión POST")
+})
+
 module.exports = router;
